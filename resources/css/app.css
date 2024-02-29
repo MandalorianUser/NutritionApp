@@ -1,0 +1,144 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --color-primario: #DAD7CD;
+    /* Color de fondo principal */
+    --color-secundario: #A3B18A;
+    /* Color secundario */
+    --color-acento-1: #588157;
+    /* Primer color de acento */
+    --color-acento-2: #3A5A40;
+    /* Segundo color de acento */
+    --color-acento-3: #344E41;
+    /* Tercer color de acento */
+    --color-fondo: #2f3e46;
+    /* Color de fondo secundario */
+}
+
+html,
+body {
+    font-family: 'Roboto', sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+
+.h1 {
+    font-weight: 600;
+}
+
+.bg-fondo {
+    background: var(--color-secundario);
+    max-height: 100vh;
+
+    /* background: linear-gradient(52deg, rgba(255,255,255,1) 5%, rgba(111,209,33,1) 95%)} */
+}
+
+.custom-shape-divider-bottom-1709155327 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1709155327 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1709155327 .shape-fill {
+    fill: #FFFFFF;
+}
+
+
+
+.welcome-container {
+    width: 85vw !important;
+    margin-top: -10%;
+    position: relative;
+    height: 85vh;
+
+
+}
+.row-container-login{
+    height: 88%;
+}
+
+  .image-container{
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+  }
+
+  .background-image-login {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url('../img/login-background.jpg');
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    border-radius: 10px !important;
+    /* Elimina la propiedad object-fit, ya que esta propiedad se usa para elementos img, no para contenedores div con fondo */
+}
+
+.background-image-login::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    /* Aplica el mismo radio de borde que el contenedor principal */
+}
+
+.login-slogan {
+    position: absolute;
+    width: 45%;
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    z-index: 1 !important;
+    color: white !important;
+    letter-spacing: 1px;
+    font-style: italic;
+    /* Establece el color del texto a blanco */
+    /* Puedes ajustar el tamaño de fuente, margen, etc., según tus preferencias */
+}
+
+.login-slogan-autor {
+    position: relative;
+    color: white !important;
+    z-index: 1;
+}
+
+
+.login-slogan-autor {
+    position: relative;
+    color: white !important;
+    z-index: 1;
+}
+
+.text-accent {
+    color: var(--color-acento-1);
+
+}
+
+.titulo-space {
+    letter-spacing: 2px;
+}
+
+
+
+
