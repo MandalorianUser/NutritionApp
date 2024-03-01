@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { TittleForm } from '@/Components/TittleForm';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -20,11 +21,11 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <div className='login-form '>
+        <div className='login-form w-75'>
             {status && <div className=" font-medium text-sm text-success">{status}</div>}
-
+            <TittleForm title={'Por favor Inicia Sesion'}/>
             <form onSubmit={submit}>
-                <div className="">
+                <div className="mt-5 mb-3">
                     <label htmlFor="email" className="form-label">Email</label>
                     <input
                         id="email"
@@ -39,7 +40,7 @@ export default function Login({ status, canResetPassword }) {
                     {errors.email && <div className="text-danger">{errors.email}</div>}
                 </div>
 
-                <div className="">
+                <div className="mb-3">
                     <label htmlFor="password" className="form-label">Contraseña</label>
                     <input
                         id="password"
@@ -77,9 +78,9 @@ export default function Login({ status, canResetPassword }) {
                     <button type="submit" className="btn btn-success w-100 p-2 fs-5">Iniciar sesión</button>
                 </div>
 
-                <div className="mt-5">
-                    <p className='text-secondary'>No tienes cuenta aun ?</p>
-                    <Link href={route('home.register')} className='btn btn-outline-success'>Registrate</Link>
+                <div className=" mt-5 d-flex align-items-baseline justify-content-between" >
+                    <div className='ms-5  bg- h-100'>No tienes cuenta aun ?</div>
+                    <Link href={route('home.register')} className='btn btn-outline-success  '>Registrate</Link>
                 </div>
             </form>
         </div>

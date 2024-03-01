@@ -11,16 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacient_consultation', function (Blueprint $table) {
-            $table->id();
-            $table->foreign('pacient_id')->references('id')->on('pacients');
-            $table->date('consultation_date');
-            $table->json('observations')->nullable;
-            $table->json('body_measures')->nullable;
-            $table->json('body_indices')->nullable;
-            $table->json('menu')->nullable;
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('pacient_consultation')){
+            Schema::create('pacient_consultation', function (Blueprint $table) {
+                $table->id();
+                $table->unsignedBigInteger('pacient_id'); // Agregar esta línea para crear la columna pacient_id
+                $table->foreign('pacient_id')->references('id')->on('pacients');
+                $table->date('consultation_date');
+                $table->json('observations')->nullable();
+                $table->json('body_measures')->nullable();
+                $table->json('body_indices')->nullable();
+                $table->json('menu')->nullable();
+                $table->timestamps();
+            });
+        }
+        
     }
 
     /**

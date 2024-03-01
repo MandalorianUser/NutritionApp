@@ -75,7 +75,7 @@ body {
   .image-container{
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
   }
 
   .background-image-login {
@@ -139,6 +139,12 @@ body {
     letter-spacing: 2px;
 }
 
+
+.login-form,.register-form{
+    height: 100% !important;
+    /* background-color: #588157!important; */
+    overflow: hidden;
+}
 
 
 

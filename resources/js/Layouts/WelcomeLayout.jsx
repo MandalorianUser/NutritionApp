@@ -11,7 +11,7 @@ export function WelcomeLayout({ children }) {
         </svg>
       </div>
 
-      <article className='mt-5  '>{children}</article>
+      <article className='mt-5 shadow '>{children}</article>
     </div>
   )
 }

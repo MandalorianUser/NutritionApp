@@ -11,21 +11,24 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pacients', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('age');
-            $table->string('sex');
-            $table->date('date_birth');
-            $table->string('civil_status');
-            $table->string('scholarity');
-            $table->string('ocupation');
-            $table->string('direction');
-            $table->string('phonenumber');
-            $table->string('email');
-            $table->string('reason_consultation');
-            $table->timestamps();
-        });
+        if(!Schema::hasTable('pacients')){
+            Schema::create('pacients', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->integer('age');
+                $table->string('sex');
+                $table->date('date_birth');
+                $table->string('civil_status');
+                $table->string('scholarity');
+                $table->string('ocupation');
+                $table->string('direction');
+                $table->string('phonenumber');
+                $table->string('email');
+                $table->string('reason_consultation');
+                $table->timestamps();
+            });
+        
+        }
     }
 
     /**

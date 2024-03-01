@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Head, Link, useForm } from '@inertiajs/react';
 import GuestLayout from '../../Layouts/GuestLayout';
+import { TittleForm } from '@/Components/TittleForm';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -23,7 +24,8 @@ export default function Register() {
 
     return (
         <GuestLayout>
-            <form onSubmit={submit}>
+            <TittleForm title={'Por favor Registrate'}/>
+            <form onSubmit={submit} className='register-form'>
                 <div className="mb-1">
                     <label htmlFor="name" className="form-label">Nombre</label>
                     <input
@@ -88,9 +90,9 @@ export default function Register() {
                     <button type="submit" className='btn w-100 btn-success'>Registrame</button>
                 </div>
 
-                <div className="d-flex  justify-content-between align-items-baseline mb-2  text-bottom" style={{'height':'40px'}}>
+                <div className="d-flex  justify-content-between align-items-baseline mb-2 " style={{'height':'40px'}}>
                     <div className="text-secondary  ms-3  ">¿Ya tienes una cuenta?</div>
-                    <Link href={route('home.login')} className="btn btn-outline-success w-50 ms-2">
+                    <Link href={route('home.login')} className="btn btn-outline-success  ms-2">
                         Inicia Sesion
                     </Link>
                 </div>
